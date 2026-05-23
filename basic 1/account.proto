@@ -1,0 +1,71 @@
+// Tells the protobuf compiler (protoc) which syntax version to use.
+// "proto3" is the modern version — simpler rules, no "required" fields,
+// and all fields are optional by default with sensible zero-values.
+syntax = "proto3";
+
+// A "message" defines the structure of your data — similar to a struct in Go
+// or a class in Java. After running protoc, this becomes a Go struct named "Account".
+message Account {
+
+    // ---- FIELD FORMAT: <type> <name> = <field_number>; ----
+    // The number after "=" is the FIELD TAG (a.k.a. field number).
+    // It is NOT a default value and NOT an index.
+    // It is a unique ID used in the binary wire format to identify this field,
+    // so the field name itself is never sent over the network (saves bytes).
+    // Tags 1-15 use only 1 byte to encode — reserve them for frequently used fields.
+
+    // uint32 = unsigned 32-bit integer (range: 0 to 4,294,967,295).
+    // Field tag = 1 (1-byte encoding, perfect for an ID that's always present).
+    uint32 id = 1;
+
+    // string = UTF-8 encoded text. In Go this maps to the built-in "string" type.
+    // Field tag = 2.
+    string name = 2;
+
+    // bytes = raw binary data (e.g. image data, file blob, encrypted payload).
+    // In Go this maps to []byte. Use this instead of "string" when the data
+    // is NOT guaranteed to be valid UTF-8 text.
+    // Field tag = 3.
+    bytes thumbnail = 3;
+
+    // bool = true / false. Encoded very compactly (1 byte) on the wire.
+    // Field tag = 4.
+    bool is_verified = 4;
+
+    // NOTE on adding fields later:
+    //   - You can ADD new fields with new tag numbers (5, 6, 7, ...) and
+    //     older clients will simply ignore them — backward compatible.
+    //   - You can RENAME a field (e.g. "name" -> "full_name") without breaking
+    //     anything, because the wire format only cares about the tag number.
+    //   - NEVER change or reuse an existing tag number once it's in production —
+    //     it would corrupt data for clients using the old schema.
+    float height = 5;
+}
+
+
+syntax = "proto3";
+
+
+enum Generation {
+    GENERATION_UNSPECIFIED = 0;
+    //Inside the Enum tags start from 0 which is generally
+    //reserverd for the undefined value
+    GENERATION_MILLENNIAL = 1;
+    GENERATION_Z = 2;
+    GENERATION_ALPHA = 3;
+    
+}
+
+message Account {
+    uint32 id = 1;
+    string name = 2;
+    bytes thumbnail = 3;
+    bool is_verified = 4;
+    float height = 5;
+    
+    // This is How we declare a repeated value inside the message
+    repeated string familyMember = 6;
+
+    //Here is the upper defined  enum used
+    Generation generation  = 7;
+}
