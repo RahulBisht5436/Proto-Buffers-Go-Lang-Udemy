@@ -1,0 +1,7 @@
+syntax ="proto3";
+
+message AdditionalInformation {
+    string FatherName =1;
+    string MotherName =2;
+    string PassportNumber =3;
+}
