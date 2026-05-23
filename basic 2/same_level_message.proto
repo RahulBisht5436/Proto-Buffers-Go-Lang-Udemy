@@ -1,0 +1,31 @@
+syntax ="proto3";
+import "additional_Information.proto";
+import "auth/autherication.proto";
+import "social/autherication.proto";
+
+message PersonInformation {
+    string name =1;
+    string surname =2;
+    string phone =3;
+    string address =4;
+
+}
+
+enum ClassEnum {
+    CLASS_UNDEFINED =0;
+    CLASS_FIRST_YEAR =1;
+    CLASS_SECOND_YEAR =2;
+    CLASS_THIRD_YEAR =3;
+    CLASS_LAST_YEAR =4;
+
+}
+
+message StudentInformation {
+    string rollNumber =1;
+    ClassEnum class=2;
+    PersonInformation Information =3;
+    AdditionalInformation addonInformation = 4;
+    auth.GetStarted authStarted =5;
+    social.GetStarted socialStarted =6;
+}
+
