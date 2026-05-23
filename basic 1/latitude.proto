@@ -1,0 +1,5 @@
+syntax = "proto3";
+message Loaction {
+    double lattitude =1;
+    double longitude =2;
+}

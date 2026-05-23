@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message Date {
+    uint32 date = 1;
+    uint32 month =2;
+    uint32 year =3;
+}
