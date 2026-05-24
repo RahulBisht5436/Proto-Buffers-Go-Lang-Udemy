@@ -1,0 +1,18 @@
+syntax ="proto3";
+package example.enumirations;
+option go_package = "example.com/proto/proto";
+
+
+
+enum GenderInfo {
+    GENDER_UNSPECIFIED = 0;
+    GENDER_MALE = 1;
+    GENDER_FEMALE = 2;
+}
+
+
+message PersonalInformation {
+    string Name =1;
+    string Surname =2;
+    GenderInfo Gender =3; 
+}

@@ -21,7 +21,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type Dummy struct {
+type Dummy1 struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Name          string                 `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	Surname       string                 `protobuf:"bytes,2,opt,name=surname,proto3" json:"surname,omitempty"`
@@ -29,20 +29,20 @@ type Dummy struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *Dummy) Reset() {
-	*x = Dummy{}
+func (x *Dummy1) Reset() {
+	*x = Dummy1{}
 	mi := &file_dummy_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *Dummy) String() string {
+func (x *Dummy1) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*Dummy) ProtoMessage() {}
+func (*Dummy1) ProtoMessage() {}
 
-func (x *Dummy) ProtoReflect() protoreflect.Message {
+func (x *Dummy1) ProtoReflect() protoreflect.Message {
 	mi := &file_dummy_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -54,19 +54,19 @@ func (x *Dummy) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use Dummy.ProtoReflect.Descriptor instead.
-func (*Dummy) Descriptor() ([]byte, []int) {
+// Deprecated: Use Dummy1.ProtoReflect.Descriptor instead.
+func (*Dummy1) Descriptor() ([]byte, []int) {
 	return file_dummy_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *Dummy) GetName() string {
+func (x *Dummy1) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-func (x *Dummy) GetSurname() string {
+func (x *Dummy1) GetSurname() string {
 	if x != nil {
 		return x.Surname
 	}
@@ -77,8 +77,8 @@ var File_dummy_proto protoreflect.FileDescriptor
 
 const file_dummy_proto_rawDesc = "" +
 	"\n" +
-	"\vdummy.proto\x12\rexample.dummy\"5\n" +
-	"\x05Dummy\x12\x12\n" +
+	"\vdummy.proto\x12\rexample.dummy\"6\n" +
+	"\x06Dummy1\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\x18\n" +
 	"\asurname\x18\x02 \x01(\tR\asurnameB\x19Z\x17example.com/proto/protob\x06proto3"
 
@@ -96,7 +96,7 @@ func file_dummy_proto_rawDescGZIP() []byte {
 
 var file_dummy_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_dummy_proto_goTypes = []any{
-	(*Dummy)(nil), // 0: example.dummy.Dummy
+	(*Dummy1)(nil), // 0: example.dummy.Dummy1
 }
 var file_dummy_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type

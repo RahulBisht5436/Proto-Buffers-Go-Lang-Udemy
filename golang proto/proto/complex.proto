@@ -1,0 +1,15 @@
+syntax="proto3";
+package example.complex ;
+
+option go_package="example.com/proto/proto";
+
+message Dummy {
+    int32 id =1 ;
+    string name =2;
+}
+
+message MessageComplex {
+    
+    repeated Dummy dummy_array =1;
+    Dummy one_dummy =2;
+}
