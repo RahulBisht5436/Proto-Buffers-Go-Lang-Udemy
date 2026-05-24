@@ -1,0 +1,13 @@
+syntax ="proto3";
+package example.simple;
+
+
+//This defines the package inside which the compiled code will be generated
+option go_package = "example.com/proto/proto";
+
+message Simple{
+    uint32 Id =1;
+   bool Is_simple=2;
+   string Name =3;
+   repeated int32 Sample_lists=4;
+}

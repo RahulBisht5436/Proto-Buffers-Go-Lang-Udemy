@@ -1,0 +1,10 @@
+syntax = "proto3";
+package example.dummy ;
+
+option go_package = "example.com/proto/proto";
+
+
+message Dummy {
+    string name =1;
+    string surname =2 ;
+}
