@@ -1,0 +1,16 @@
+syntax ="proto3";
+enum CountryName {
+    COUNTRY_UNASSIGNED =0;
+    COUNTRY_INDIA =1;
+    COUNTRY_USA=2;
+}
+message Address {
+    string StreetName =1;
+    string City =2;
+}
+
+message Building{
+    string BuildingName=1;
+    string BuildingNumber =2;
+    Address street =3;
+}

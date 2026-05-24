@@ -1,0 +1,6 @@
+syntax ="proto3";
+enum CountryName {
+    COUNTRY_UNSPECIFIED = 0;
+    COUNTRY_INDIA = 1;
+    COUNTRY_USA = 2;
+}

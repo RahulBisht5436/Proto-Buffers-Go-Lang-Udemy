@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+
+message Building {
+    enum CountryName {
+        COUNTRY_UNSPECIFIED = 0;
+        COUNTRY_INDIA = 1;
+        COUNTRY_USA = 2;
+    }
+
+    message Address {
+     
+        string street_name = 1;
+        string city = 2;
+        CountryName country = 3;    // ← now using the enum!
+    }
+
+    string building_name = 1;
+    string building_number = 2;
+    Address address = 3;        // ← clearer field name
+}

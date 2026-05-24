@@ -1,0 +1,10 @@
+syntax ="proto3";
+
+import "country.proto";
+
+message Address {
+     
+    string street_name = 1;
+    string city = 2;
+    CountryName country = 3;    // ← now using the enum!
+}
